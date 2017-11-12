@@ -18,7 +18,7 @@ class PetugasTableSeeder extends Seeder
           'email' => 'administrator@gmail.com',
           'telp' => '085331247098',
           'username' => 'admin',
-          'password' => md5('admin')
+          'password' => bcrypt('admin')
         ]);
     }
 }

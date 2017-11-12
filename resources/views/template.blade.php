@@ -110,11 +110,16 @@ Tip 2: you can also add an image using data-image tag
                 </li>
               </ul>
             </li>
-            <li>
-              <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="material-icons">account_circle</i>
-                <p class="hidden-lg hidden-md">Profile</p>
+                <span><b>{{ auth()->guard('petugas')->user()->nama }}</b></span>
               </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="/logout">Logout</a>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>

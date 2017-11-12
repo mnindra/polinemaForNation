@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,4 +11,12 @@
 |
 */
 
-Route::get('/', 'BerandaController@index');
+Route::group(['middleware' => 'auth_petugas'], function () {
+  Route::get('/', 'BerandaController@index');
+  Route::get('/logout', 'Auth\LoginController@logout');
+});
+
+Route::group(['middleware' => 'redirect_petugas'], function () {
+  Route::get('/login', 'Auth\LoginController@showLoginForm');
+  Route::post('/login', 'Auth\LoginController@login');
+});
