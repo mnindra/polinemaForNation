@@ -117,7 +117,7 @@ Tip 2: you can also add an image using data-image tag
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <a href="/logout">Logout</a>
+                  <a href="{{ url('/logout') }}">Logout</a>
                 </li>
               </ul>
             </li>
