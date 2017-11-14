@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => 'auth_petugas'], function () {
   Route::get('/', 'BerandaController@index');
   Route::get('/logout', 'Auth\LoginController@logout');
+
+  // Kategori Route
+  Route::resource('kategori', 'KategoriController');
 });
 
 Route::group(['middleware' => 'redirect_petugas'], function () {

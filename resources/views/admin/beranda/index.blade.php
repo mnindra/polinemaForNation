@@ -1,6 +1,6 @@
-@extends('template')
+@extends('admin.template')
 
-@section('pageTitle', 'beranda')
+@section('pageTitle', 'Beranda')
 
 @section('content')
     Ini halaman beranda

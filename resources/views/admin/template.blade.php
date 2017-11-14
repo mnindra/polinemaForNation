@@ -13,11 +13,12 @@
   <link href="<?= asset('css/bootstrap.min.css') ?>" rel="stylesheet" />
   <!--  Material Dashboard CSS    -->
   <link href="<?= asset('css/material-dashboard.css?v=1.2.0') ?>" rel="stylesheet" />
-  <!--  CSS for Demo Purpose, don't include it in your project     -->
-  <link href="<?= asset('css/demo.css') ?>" rel="stylesheet" />
   <!--     Fonts and icons     -->
   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+
+  {{-- Datatables --}}
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
 </head>
 
 <body>
@@ -43,7 +44,7 @@ Tip 2: you can also add an image using data-image tag
         </li>
 
         <li>
-          <a href="#">
+          <a href="{{ url('/kategori') }}">
             <i class="material-icons">label</i>
             <p>Kategori</p>
           </a>
@@ -82,7 +83,7 @@ Tip 2: you can also add an image using data-image tag
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">@yield('pageTitle')</a>
+          <a class="navbar-brand" href="#"><b>@yield('pageTitle')</b></a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -156,18 +157,33 @@ Tip 2: you can also add an image using data-image tag
 <script src="<?= asset('js/perfect-scrollbar.jquery.min.js') ?>"></script>
 <!--  Notifications Plugin    -->
 <script src="<?= asset('js/bootstrap-notify.js') ?>"></script>
-<!--  Google Maps Plugin    -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
 <!-- Material Dashboard javascript methods -->
 <script src="<?= asset('js/material-dashboard.js?v=1.2.0') ?>"></script>
-<!-- Material Dashboard DEMO methods, don't include it in your project! -->
-<script src="<?= asset('js/demo.js') ?>"></script>
+
+{{-- Datatables --}}
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+
 <script type="text/javascript">
     $(document).ready(function() {
-
-        // Javascript method's body can be found in assets/js/demos.js
-        demo.initDashboardPageCharts();
-
+        $('#table').DataTable({
+            "lengthChange": false,
+            "language": {
+                "search": "",
+                "searchPlaceholder": "Pencarian",
+                "emptyTable": "Data Masih Kosong",
+                "info": "Menampilkan _START_ hingga _END_ dari _TOTAL_ data",
+                "infoEmpty": "Menampilkan 0 hingga 0 dari 0 data",
+                "paginate": {
+                    "first":      "First",
+                    "last":       "Last",
+                    "next":       "Selanjutnya",
+                    "previous":   "Sebelumnya"
+                },
+                "infoFiltered": "",
+                "zeroRecords": "Data tidak ditemukan"
+            }
+        });
     });
 </script>
 
