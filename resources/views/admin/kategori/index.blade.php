@@ -1,13 +1,13 @@
 @extends('admin.template')
 
-@section('pageTitle', 'Kategori')
+@section('pageTitle', 'Halaman Kategori')
 
 @section('content')
     <div class="row">
         <div class="col-md-7">
+            <h4>Data Kategori</h4>
             <div class="card">
                 <div class="card-content table-responsive">
-                    <b>Data Kategori</b>
                     <table class="table table-striped table-bordered" id="table">
                         <thead class="text-primary">
                         <tr>
@@ -41,9 +41,9 @@
         </div>
 
         <div class="col-md-5">
+            <h4>Tambah Kategori</h4>
             <div class="card">
                 <div class="card-content">
-                    <b>Tambah Kategori</b>
                     <form action="{{ url('/kategori') }}" method="post">
                         {{ csrf_field() }}
 

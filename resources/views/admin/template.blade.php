@@ -37,7 +37,7 @@ Tip 2: you can also add an image using data-image tag
     <div class="sidebar-wrapper">
       <ul class="nav">
         <li>
-          <a href="#">
+          <a href="{{ url('/') }}">
             <i class="material-icons">dashboard</i>
             <p>Beranda</p>
           </a>
@@ -65,7 +65,7 @@ Tip 2: you can also add an image using data-image tag
         </li>
 
         <li>
-          <a href="#">
+          <a href="{{ url('/petugas') }}">
             <i class="material-icons">supervisor_account</i>
             <p>Petugas</p>
           </a>

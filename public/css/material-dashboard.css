@@ -919,12 +919,12 @@ h2.title {
 .sidebar .sidebar-wrapper,
 .perfect-scrollbar-on .main-panel,
 .main-panel {
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 .perfect-scrollbar-off .sidebar .sidebar-wrapper,
 .perfect-scrollbar-off .main-panel {
-    overflow: auto;
+    /*overflow: auto;*/
 }
 
 .main-panel {
@@ -2828,7 +2828,7 @@ fieldset[disabled] .form-group .form-control {
 
 .form-group .help-block {
     position: absolute;
-    display: none;
+    /*display: none;*/
 }
 
 .form-group.is-focused .form-control {

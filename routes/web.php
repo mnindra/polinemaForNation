@@ -17,6 +17,9 @@ Route::group(['middleware' => 'auth_petugas'], function () {
 
   // Kategori Route
   Route::resource('kategori', 'KategoriController');
+
+  // Petugas Route
+  Route::resource('petugas', 'PetugasController');
 });
 
 Route::group(['middleware' => 'redirect_petugas'], function () {

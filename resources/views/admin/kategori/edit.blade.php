@@ -1,6 +1,6 @@
 @extends('admin.template')
 
-@section('pageTitle', 'Ubah Kategori')
+@section('pageTitle', 'Halaman Ubah Kategori')
 
 @section('content')
     <div class="row">
