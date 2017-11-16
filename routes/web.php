@@ -20,6 +20,9 @@ Route::group(['middleware' => 'auth_petugas'], function () {
 
   // Petugas Route
   Route::resource('petugas', 'PetugasController');
+
+  // Buku Route
+  Route::resource('buku', 'BukuController');
 });
 
 Route::group(['middleware' => 'redirect_petugas'], function () {

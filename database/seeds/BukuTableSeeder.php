@@ -20,7 +20,11 @@ class BukuTableSeeder extends Seeder
           'judul' => str_random(),
           'pengarang' => 'm. nindra zaka',
           'penerbit' => 'm. nindra zaka',
-          'file' => 'tes'
+          'file' => 'tes',
+          'sampul' => 'tes',
+          'deskripsi' => 'tes',
+          'jumlah_halaman' => 100,
+          'tahun_terbit' => 2017
         ]);
       }
     }

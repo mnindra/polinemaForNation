@@ -51,7 +51,7 @@ Tip 2: you can also add an image using data-image tag
         </li>
 
         <li>
-          <a href="#">
+          <a href="{{ url('/buku') }}">
             <i class="material-icons">book</i>
             <p>Buku</p>
           </a>
