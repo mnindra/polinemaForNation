@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Buku;
+use App\Http\Controllers\Controller;
 use App\Kategori;
 use Illuminate\Http\Request;
 
@@ -69,7 +70,7 @@ class BukuController extends Controller
       'file' => $file,
       'sampul' => $sampul
     ]);
-    return redirect('/buku');
+    return redirect('/admin/buku');
   }
 
   /**
@@ -156,7 +157,7 @@ class BukuController extends Controller
       ]);
     }
 
-    return redirect('/buku');
+    return redirect('/admin/buku');
   }
 
   /**
@@ -172,6 +173,6 @@ class BukuController extends Controller
     unlink('img/sampul/' . $buku['sampul']);
 
     Buku::destroy($id);
-    return redirect('/buku');
+    return redirect('/admin/buku');
   }
 }

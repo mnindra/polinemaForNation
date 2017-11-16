@@ -8,7 +8,7 @@
             <h4>Tambah Petugas</h4>
             <div class="card">
                 <div class="card-content">
-                    <form action="{{ url('/petugas') }}" method="post">
+                    <form action="{{ url('/admin/petugas') }}" method="post">
                         {{ csrf_field() }}
 
                         <div class="row">

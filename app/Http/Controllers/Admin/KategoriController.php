@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Kategori;
 use Illuminate\Http\Request;
 
@@ -41,7 +42,7 @@ class KategoriController extends Controller
       ]);
 
       Kategori::create($request->all());
-      return redirect('/kategori');
+      return redirect('/admin/kategori');
     }
 
     /**
@@ -81,7 +82,7 @@ class KategoriController extends Controller
       ]);
 
       Kategori::find($id)->update($request->all());
-      return redirect('/kategori');
+      return redirect('/admin/kategori');
     }
 
     /**
@@ -93,6 +94,6 @@ class KategoriController extends Controller
     public function destroy($id)
     {
         Kategori::destroy($id);
-        return redirect('/kategori');
+        return redirect('/admin/kategori');
     }
 }

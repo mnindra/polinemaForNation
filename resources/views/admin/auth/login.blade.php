@@ -24,7 +24,7 @@
                     <h5 class="text-center">Login Admin</h5>
                 </div>
                 <div class="card-content">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/login') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">

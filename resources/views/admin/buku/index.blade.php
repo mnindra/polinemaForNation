@@ -18,7 +18,7 @@
                     <h4>Data Buku</h4>
                 </div>
                 <div class="col-md-4 col-lg-4">
-                    <a class="btn btn-primary pull-right" href="{{ url('/buku/create') }}" role="button">Tambah</a>
+                    <a class="btn btn-primary pull-right" href="{{ url('/admin/buku/create') }}" role="button">Tambah</a>
                 </div>
             </div>
 
@@ -48,14 +48,14 @@
                                 <td>{{ $row['judul'] }}</td>
                                 <td>{{ $row['penerbit'] }}</td>
                                 <td>
-                                    <form id="{{ 'form' . $row['id_buku'] }}" action="{{ url('/buku/' . $row['id_buku']) }}" method="post">
+                                    <form id="{{ 'form' . $row['id_buku'] }}" action="{{ url('/admin/buku/' . $row['id_buku']) }}" method="post">
                                         {{ csrf_field() }}
                                         {{ method_field('delete') }}
                                     </form>
 
                                     <div class="btn-group" role="group" aria-label="Basic example">
-                                        <a href="{{ url('/buku/' . $row['id_buku']) }}" class="btn btn-sm btn-info">Detail</a>
-                                        <a href="{{ url('/buku/' . $row['id_buku'] . '/edit') }}" class="btn btn-sm btn-warning">Ubah</a>
+                                        <a href="{{ url('/admin/buku/' . $row['id_buku']) }}" class="btn btn-sm btn-info">Detail</a>
+                                        <a href="{{ url('/admin/buku/' . $row['id_buku'] . '/edit') }}" class="btn btn-sm btn-warning">Ubah</a>
                                         <button type="submit" class="btn btn-sm btn-danger" form="{{ 'form' . $row['id_buku'] }}">Hapus</button>
                                     </div>
                                 </td>

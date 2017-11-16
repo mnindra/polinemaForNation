@@ -7,7 +7,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-content">
-                    <form action="{{ url('/kategori/' . $kategori['id_kategori']) }}" method="post">
+                    <form action="{{ url('/admin/kategori/' . $kategori['id_kategori']) }}" method="post">
                         {{ csrf_field() }}
                         {{ method_field('put') }}
                         {{-- Input Text nama --}}

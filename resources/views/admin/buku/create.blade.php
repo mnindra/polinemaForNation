@@ -8,7 +8,7 @@
             <h4>Tambah Buku</h4>
             <div class="card">
                 <div class="card-content">
-                    <form action="{{ url('/buku') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ url('/admin/buku') }}" method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
 
                         <div class="row">

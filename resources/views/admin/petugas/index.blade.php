@@ -18,7 +18,7 @@
                     <h4>Data Petugas</h4>
                 </div>
                 <div class="col-md-4 col-lg-4">
-                    <a class="btn btn-primary pull-right" href="{{ url('/petugas/create') }}" role="button">Tambah</a>
+                    <a class="btn btn-primary pull-right" href="{{ url('/admin/petugas/create') }}" role="button">Tambah</a>
                 </div>
             </div>
 
@@ -46,13 +46,13 @@
                                 <td>{{ $row['email'] }}</td>
                                 <td>{{ $row['telp'] }}</td>
                                 <td>
-                                    <form id="{{ 'form' . $row['id_petugas'] }}" action="{{ url('/petugas/' . $row['id_petugas']) }}" method="post">
+                                    <form id="{{ 'form' . $row['id_petugas'] }}" action="{{ url('/admin/petugas/' . $row['id_petugas']) }}" method="post">
                                         {{ csrf_field() }}
                                         {{ method_field('delete') }}
                                     </form>
 
                                     <div class="btn-group" role="group" aria-label="Basic example">
-                                        <a href="{{ url('/petugas/' . $row['id_petugas'] . '/edit') }}" class="btn btn-sm btn-warning">Ubah</a>
+                                        <a href="{{ url('/admin/petugas/' . $row['id_petugas'] . '/edit') }}" class="btn btn-sm btn-warning">Ubah</a>
                                         <button type="submit" class="btn btn-sm btn-danger" form="{{ 'form' . $row['id_petugas'] }}">Hapus</button>
                                     </div>
                                 </td>

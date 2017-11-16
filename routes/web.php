@@ -12,20 +12,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['middleware' => 'auth_petugas'], function () {
-  Route::get('/', 'BerandaController@index');
-  Route::get('/logout', 'Auth\LoginController@logout');
+  Route::get('/admin/', 'Admin\BerandaController@index');
+  Route::get('/admin/logout', 'Admin\Auth\LoginController@logout');
 
   // Kategori Route
-  Route::resource('kategori', 'KategoriController');
+  Route::resource('admin/kategori', 'Admin\KategoriController');
 
   // Petugas Route
-  Route::resource('petugas', 'PetugasController');
+  Route::resource('admin/petugas', 'Admin\PetugasController');
 
   // Buku Route
-  Route::resource('buku', 'BukuController');
+  Route::resource('admin/buku', 'Admin\BukuController');
 });
 
 Route::group(['middleware' => 'redirect_petugas'], function () {
-  Route::get('/login', 'Auth\LoginController@showLoginForm');
-  Route::post('/login', 'Auth\LoginController@login');
+  Route::get('/admin/login', 'Admin\Auth\LoginController@showLoginForm');
+  Route::post('/admin/login', 'Admin\Auth\LoginController@login');
 });

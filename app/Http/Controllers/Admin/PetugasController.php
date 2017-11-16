@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Petugas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -51,7 +52,7 @@ class PetugasController extends Controller
         ]);
 
         Petugas::create($request->all());
-        return redirect('/petugas');
+        return redirect('/admin/petugas');
     }
 
     /**
@@ -94,7 +95,7 @@ class PetugasController extends Controller
       ]);
 
         Petugas::find($id)->update($request->all());
-        return redirect('/petugas');
+        return redirect('/admin/petugas');
     }
 
     /**
@@ -112,6 +113,6 @@ class PetugasController extends Controller
           Petugas::destroy($id);
         }
 
-        return redirect('/petugas');
+        return redirect('/admin/petugas');
     }
 }

@@ -22,13 +22,13 @@
                                 <td>{{ $index + 1 }}</td>
                                 <td>{{ $row['nama'] }}</td>
                                 <td>
-                                    <form id="{{ 'form' . $row['id_kategori'] }}" action="{{ url('/kategori/' . $row['id_kategori']) }}" method="post">
+                                    <form id="{{ 'form' . $row['id_kategori'] }}" action="{{ url('/admin/kategori/' . $row['id_kategori']) }}" method="post">
                                         {{ csrf_field() }}
                                         {{ method_field('delete') }}
                                     </form>
 
                                     <div class="btn-group" role="group" aria-label="Basic example">
-                                        <a href="{{ url('/kategori/' . $row['id_kategori'] . '/edit') }}" class="btn btn-sm btn-warning">Ubah</a>
+                                        <a href="{{ url('/admin/kategori/' . $row['id_kategori'] . '/edit') }}" class="btn btn-sm btn-warning">Ubah</a>
                                         <button type="submit" class="btn btn-sm btn-danger" form="{{ 'form' . $row['id_kategori'] }}">Hapus</button>
                                     </div>
                                 </td>
@@ -44,7 +44,7 @@
             <h4>Tambah Kategori</h4>
             <div class="card">
                 <div class="card-content">
-                    <form action="{{ url('/kategori') }}" method="post">
+                    <form action="{{ url('/admin/kategori') }}" method="post">
                         {{ csrf_field() }}
 
                         {{-- Input Text nama --}}
