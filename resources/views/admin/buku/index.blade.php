@@ -30,9 +30,9 @@
                             <th>No</th>
                             <th>ID Buku</th>
                             <th>ISBN</th>
+                            <th>Tahun Terbit</th>
                             <th>Kategori</th>
                             <th>Judul</th>
-                            <th>Pengarang</th>
                             <th>Penerbit</th>
                             <th>Aksi</th>
                         </tr>
@@ -43,9 +43,9 @@
                                 <td>{{ $index + 1 }}</td>
                                 <td>{{ $row['id_buku'] }}</td>
                                 <td>{{ $row['isbn'] }}</td>
+                                <td>{{ $row['tahun_terbit'] }}</td>
                                 <td>{{ $row['kategori']->nama }}</td>
                                 <td>{{ $row['judul'] }}</td>
-                                <td>{{ $row['pengarang'] }}</td>
                                 <td>{{ $row['penerbit'] }}</td>
                                 <td>
                                     <form id="{{ 'form' . $row['id_buku'] }}" action="{{ url('/buku/' . $row['id_buku']) }}" method="post">
@@ -54,6 +54,7 @@
                                     </form>
 
                                     <div class="btn-group" role="group" aria-label="Basic example">
+                                        <a href="{{ url('/buku/' . $row['id_buku']) }}" class="btn btn-sm btn-info">Detail</a>
                                         <a href="{{ url('/buku/' . $row['id_buku'] . '/edit') }}" class="btn btn-sm btn-warning">Ubah</a>
                                         <button type="submit" class="btn btn-sm btn-danger" form="{{ 'form' . $row['id_buku'] }}">Hapus</button>
                                     </div>

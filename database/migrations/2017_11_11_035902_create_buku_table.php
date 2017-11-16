@@ -20,11 +20,13 @@ class CreateBukuTable extends Migration
           $table->string('judul');
           $table->string('pengarang');
           $table->string('penerbit');
+          $table->integer('harga');
           $table->integer('jumlah_halaman');
           $table->integer('tahun_terbit');
           $table->string('file');
           $table->string('sampul');
           $table->string('deskripsi');
+          $table->integer('stok');
           $table->timestamps();
 
           // foreign key constrant

@@ -49,6 +49,8 @@ class BukuController extends Controller
       'sampul' => 'required|image',
       'tahun_terbit' => 'required|numeric',
       'jumlah_halaman' => 'required|numeric',
+      'harga' => 'required|numeric',
+      'stok' => 'required|numeric',
       'deskripsi' => 'required|string'
     ]);
 
@@ -78,7 +80,8 @@ class BukuController extends Controller
    */
   public function show($id)
   {
-    //
+    $data['buku'] = Buku::find($id);
+    return view('admin.buku.show', $data);
   }
 
   /**
@@ -112,6 +115,8 @@ class BukuController extends Controller
       'sampul' => 'sometimes|required|image',
       'tahun_terbit' => 'required|numeric',
       'jumlah_halaman' => 'required|numeric',
+      'harga' => 'required|numeric',
+      'stok' => 'required|numeric',
       'deskripsi' => 'required|string'
     ]);
 

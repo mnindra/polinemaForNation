@@ -24,7 +24,9 @@ class BukuTableSeeder extends Seeder
           'sampul' => 'tes',
           'deskripsi' => 'tes',
           'jumlah_halaman' => 100,
-          'tahun_terbit' => 2017
+          'tahun_terbit' => 2017,
+          'harga' => 100000,
+          'stok' => 10
         ]);
       }
     }

@@ -80,7 +80,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-2 col-lg-2">
+                            <div class="col-md-4 col-lg-4">
                                 {{-- Input Text tahun_terbit --}}
                                 <div class="form-group label-floating{{ $errors->has('tahun_terbit') ? ' has-error' : '' }}">
                                     <label class="control-label" for="tahun_terbit">Tahun Terbit</label>
@@ -94,7 +94,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-2 col-lg-2">
+                            <div class="col-md-4 col-lg-4">
                                 {{-- Input Text jumlah_halaman --}}
                                 <div class="form-group label-floating{{ $errors->has('jumlah_halaman') ? ' has-error' : '' }}">
                                     <label class="control-label" for="jumlah_halaman">Jumlah Halaman</label>
@@ -109,11 +109,41 @@
                             </div>
 
                             <div class="col-md-4 col-lg-4">
+                                {{-- Input Text harga --}}
+                                <div class="form-group label-floating{{ $errors->has('harga') ? ' has-error' : '' }}">
+                                    <label class="control-label" for="harga">Harga</label>
+                                    <input id="harga" type="text" class="form-control" name="harga" value="{{ old('harga', $buku['harga']) }}" required autofocus>
+                                    <span class="material-input"></span>
+                                    @if ($errors->has('harga'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('harga') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4 col-lg-4">
+                                {{-- Input Text stok --}}
+                                <div class="form-group label-floating{{ $errors->has('stok') ? ' has-error' : '' }}">
+                                    <label class="control-label" for="stok">Stok</label>
+                                    <input id="stok" type="text" class="form-control" name="stok" value="{{ old('stok', $buku['stok']) }}" required autofocus>
+                                    <span class="material-input"></span>
+                                    @if ($errors->has('stok'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('stok') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-lg-4">
                                 {{-- Input File file --}}
                                 <div class="form-group is-focused label-floating{{ $errors->has('file') ? ' has-error' : '' }}">
                                     <label class="control-label" for="file">File Ebook</label>
                                     <input id="file" type="file" class="form-control" name="file" value="{{ old('file') }}" autofocus>
-                                    <span class="material-input"></span>
+                                    <span class="material-input"></span><br><br>
                                     @if ($errors->has('file'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('file') }}</strong>
@@ -127,7 +157,7 @@
                                 <div class="form-group is-focused label-floating{{ $errors->has('sampul') ? ' has-error' : '' }}">
                                     <label class="control-label" for="sampul">Sampul</label>
                                     <input id="sampul" type="file" class="form-control" name="sampul" value="{{ old('sampul') }}" autofocus>
-                                    <span class="material-input"></span>
+                                    <span class="material-input"></span><br><br>
                                     @if ($errors->has('sampul'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('sampul') }}</strong>
