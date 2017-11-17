@@ -11,6 +11,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// User Route :
+Route::get('/', 'BerandaController@index');
+
+
+
+// Admin Route :
+
 Route::group(['middleware' => 'auth_petugas'], function () {
   Route::get('/admin/', 'Admin\BerandaController@index');
   Route::get('/admin/logout', 'Admin\Auth\LoginController@logout');
