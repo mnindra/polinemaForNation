@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Buku;
 use Illuminate\Http\Request;
 
-class BerandaController extends Controller
+class BukuController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class BerandaController extends Controller
      */
     public function index()
     {
-        $data['buku'] = Buku::orderBy('created_at', 'desc')->take(5)->get();
-        return view('beranda.index', $data);
+        //
     }
 
     /**
@@ -36,6 +35,7 @@ class BerandaController extends Controller
      */
     public function store(Request $request)
     {
+        //
     }
 
     /**
@@ -46,7 +46,8 @@ class BerandaController extends Controller
      */
     public function show($id)
     {
-        //
+        $data['buku'] = Buku::find($id);
+        return view('buku.show', $data);
     }
 
     /**
