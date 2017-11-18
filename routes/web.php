@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 // User Route :
 Route::get('/', 'BerandaController@index');
 Route::post('/pemesanan/create', 'PemesananController@store');
+Route::get('/buku/', 'BukuController@index');
 Route::get('/buku/{id}', 'BukuController@show');
 
 

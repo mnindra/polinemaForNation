@@ -68,11 +68,21 @@
 {{-- Owl Carousel --}}
 <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
 
+{{-- List JS --}}
+<script src="{{ asset('js/list.min.js') }}"></script>
+
 <script>
     $(document).ready(function(){
         $(".owl-carousel").owlCarousel({
             margin: 15
         });
+
+        const options = {
+            valueNames: ['judul', 'kategori', 'harga'],
+            page: 3,
+            pagination: true
+        };
+        const booklist = new List('book-list', options);
     });
 </script>
 

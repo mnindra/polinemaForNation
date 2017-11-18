@@ -8,6 +8,7 @@
         <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#book">Koleksi Buku</a>
         </li>
+
         <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contact">Pemesanan</a>
         </li>
@@ -112,7 +113,7 @@
                 <div class="row">
                     <div class="col-md-5 col-lg-5">
                         <h2>Koleksi Buku Terbaru</h2>
-                        <a name="" id="" class="btn btn-block btn-outline-primary btn-lg" href="#" role="button">Lihat Semua Koleksi</a>
+                        <a name="" id="" class="btn btn-block btn-outline-primary btn-lg" href="{{ url('/buku') }}" role="button">Lihat Semua Koleksi</a>
                     </div>
                     <div class="col-md-7 col-lg-7">
                         <div class="owl-carousel">

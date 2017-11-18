@@ -10,8 +10,13 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 my-auto">
-                    <img src="{{ asset('img/sampul/' . $buku['sampul']) }}" class="img-fluid" alt="">
+                    <img src="{{ asset('img/sampul/' . $buku['sampul']) }}" class="img-fluid">
                     <br><br>
+                    <div class="text-center">
+                        <span class="text-muted">ID BUKU</span>
+                        <h4>{{ $buku['id_buku'] }}</h4>
+                    </div>
+                    <br>
                     <a href="{{ url('/ebook/' . $buku['file']) }}" role="button" class="btn btn-outline-primary btn-lg btn-block">Lihat Buku</a>
                     <a href="{{ url('/#contact') }}" role="button" class="btn btn-outline-success btn-lg btn-block">Pesan Sekarang</a>
                 </div>
