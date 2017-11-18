@@ -18,7 +18,7 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard('petugas')->check()) {
-            return redirect('/');
+            return redirect('/admin');
         }
 
         return $next($request);

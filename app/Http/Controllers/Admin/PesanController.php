@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Buku;
+use App\Pesan;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class BerandaController extends Controller
+class PesanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,9 @@ class BerandaController extends Controller
      */
     public function index()
     {
-        $data['buku'] = Buku::all();
-        return view('template', $data);
+//        $data['pesan'] = Pesan::all()->sortByDesc('created_at');
+        $data['pesan'] = Pesan::orderBy('created_at', 'desc')->get();
+        return view('admin.pesan.index', $data);
     }
 
     /**
@@ -36,6 +38,7 @@ class BerandaController extends Controller
      */
     public function store(Request $request)
     {
+        //
     }
 
     /**
@@ -46,7 +49,8 @@ class BerandaController extends Controller
      */
     public function show($id)
     {
-        //
+        $data['pesan'] = Pesan::find($id);
+        return view('admin.pesan.show', $data);
     }
 
     /**
@@ -80,6 +84,7 @@ class BerandaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Pesan::destroy($id);
+        return redirect('/admin/pesan');
     }
 }

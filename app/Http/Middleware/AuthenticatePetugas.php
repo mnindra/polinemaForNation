@@ -17,7 +17,7 @@ class AuthenticatePetugas
     public function handle($request, Closure $next)
     {
         if(!Auth::guard('petugas')->check()) {
-          return redirect('/login');
+          return redirect('/admin/login');
         }
         return $next($request);
     }

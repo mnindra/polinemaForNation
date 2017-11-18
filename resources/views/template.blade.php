@@ -159,19 +159,20 @@
         <div class="row">
             <div class="col-md-8 col-lg-8">
                 <h2>Pemesanan</h2>
-                <form action="" method="post">
+                <form action="{{ url('/pemesanan/create') }}" method="post">
+                    {{ csrf_field() }}
                     <div class="row">
                         <div class="col-md-4 col-lg-4">
                             {{-- Input Text nama --}}
                             <div class="form-group{{ $errors->has('nama') ? ' has-error' : '' }}">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                    <input id="nama" type="text" class="form-control" name="nama" placeholder="nama" value="{{ old('nama') }}" required autofocus>
+                                    <input id="nama" type="text" class="form-control" name="nama" placeholder="nama" value="{{ old('nama') }}" required >
                                 </div>
                                 @if ($errors->has('nama'))
                                     <span class="help-block">
-                                <strong>{{ $errors->first('nama') }}</strong>
-                            </span>
+                                        <strong>{{ $errors->first('nama') }}</strong>
+                                    </span>
                                 @endif
                             </div>
                         </div>
@@ -181,7 +182,7 @@
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                    <input id="email" type="email" class="form-control" name="email" placeholder="email" value="{{ old('email') }}" required autofocus>
+                                    <input id="email" type="email" class="form-control" name="email" placeholder="email" value="{{ old('email') }}" required >
                                 </div>
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -196,7 +197,7 @@
                             <div class="form-group{{ $errors->has('telp') ? ' has-error' : '' }}">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                                    <input id="telp" type="text" class="form-control" name="telp" placeholder="nomor telepon" value="{{ old('telp') }}" required autofocus>
+                                    <input id="telp" type="text" class="form-control" name="telp" placeholder="nomor telepon" value="{{ old('telp') }}" required >
                                 </div>
                                 @if ($errors->has('telp'))
                                     <span class="help-block">
@@ -210,7 +211,7 @@
                         <div class="col-md-12 col-lg-12">
                             {{-- Input Textarea isi --}}
                             <div class="form-group{{ $errors->has('isi') ? ' has-error' : '' }}">
-                                <textarea id="isi" class="form-control" name="isi" rows="5" placeholder="Pesan" required autofocus>{{ old('isi') }}</textarea>
+                                <textarea id="isi" class="form-control" name="isi" rows="5" placeholder="Pesan" required >{{ old('isi') }}</textarea>
                                 @if ($errors->has('isi'))
                                     <span class="help-block">
                                 <strong>{{ $errors->first('isi') }}</strong>

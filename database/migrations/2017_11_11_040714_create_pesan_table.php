@@ -19,7 +19,7 @@ class CreatePesanTable extends Migration
             $table->string('email');
             $table->string('telp');
             $table->string('isi');
-            $table->boolean('dibaca');
+            $table->boolean('dibaca')->default(true);
             $table->timestamps();
         });
     }

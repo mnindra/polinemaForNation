@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 
 // User Route :
 Route::get('/', 'BerandaController@index');
-
+Route::post('/pemesanan/create', 'PemesananController@store');
 
 
 // Admin Route :
@@ -30,6 +30,9 @@ Route::group(['middleware' => 'auth_petugas'], function () {
 
   // Buku Route
   Route::resource('admin/buku', 'Admin\BukuController');
+
+  // Pesan Route
+  Route::resource('admin/pesan', 'Admin\PesanController');
 });
 
 Route::group(['middleware' => 'redirect_petugas'], function () {

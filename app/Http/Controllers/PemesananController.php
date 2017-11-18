@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Buku;
+use App\Pesan;
 use Illuminate\Http\Request;
 
-class BerandaController extends Controller
+class PemesananController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class BerandaController extends Controller
      */
     public function index()
     {
-        $data['buku'] = Buku::all();
-        return view('template', $data);
+        //
     }
 
     /**
@@ -36,6 +35,15 @@ class BerandaController extends Controller
      */
     public function store(Request $request)
     {
+      $this->validate($request, [
+        'nama' => 'required|string',
+        'email' => 'required|email',
+        'telp' => 'required|numeric',
+        'isi' => 'required|string'
+      ]);
+
+      Pesan::create($request->all());
+      return redirect('/#contact');
     }
 
     /**

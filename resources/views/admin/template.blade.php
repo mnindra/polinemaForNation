@@ -58,7 +58,7 @@ Tip 2: you can also add an image using data-image tag
         </li>
 
         <li>
-          <a href="#">
+          <a href="{{ url('/admin/pesan') }}">
             <i class="material-icons">email</i>
             <p>Pesan</p>
           </a>
