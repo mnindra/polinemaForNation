@@ -26,6 +26,9 @@
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/new-age.css') }}" rel="stylesheet">
 
+    {{-- Owl Carousel --}}
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
 </head>
 
 <body id="page-top">
@@ -148,7 +151,25 @@
 <section class="cta" id="book">
     <div class="cta-content">
         <div class="container">
-            <h2>Koleksi Buku</h2>
+            <div class="row">
+                <div class="col-md-5 col-lg-5">
+                    <h2>Koleksi Buku Terbaru</h2>
+                    <a name="" id="" class="btn btn-block btn-outline-primary btn-lg" href="#" role="button">Lihat Semua Koleksi</a>
+                </div>
+                <div class="col-md-7 col-lg-7">
+                    <div class="owl-carousel">
+                        @foreach($buku as $row)
+                            <div>
+                                <a style="text-decoration: none" href="{{ url('/buku/' . $row['id_buku']) }}">
+                                    <img width="100%" height="280" src="{{ asset('img/sampul/' . $row['sampul']) }}" alt="">
+                                    <br>
+                                    <h5 class="text-center text-white">{{ $row['judul'] }}</h5>
+                                </a>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="overlay"></div>
@@ -246,6 +267,17 @@
 
 <!-- Custom scripts for this template -->
 <script src="{{ asset('js/new-age.min.js') }}"></script>
+
+{{-- Owl Carousel --}}
+<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+
+<script>
+    $(document).ready(function(){
+        $(".owl-carousel").owlCarousel({
+            margin: 15
+        });
+    });
+</script>
 
 </body>
 

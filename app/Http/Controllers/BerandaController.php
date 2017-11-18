@@ -14,7 +14,7 @@ class BerandaController extends Controller
      */
     public function index()
     {
-        $data['buku'] = Buku::all();
+        $data['buku'] = Buku::orderBy('created_at', 'desc')->take(5)->get();
         return view('template', $data);
     }
 
