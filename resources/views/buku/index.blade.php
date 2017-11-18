@@ -31,6 +31,9 @@
                                         <img style="height: 350px; width: auto" src="{{ url('/img/sampul/' . $row['sampul']) }}">
                                         <br><br>
                                         <h3 class="judul">{{ $row['judul'] }}</h3>
+                                        @php $tersedia = $row['stok'] > 0 ? 'tersedia' : 'tidak tersedia' @endphp
+                                        @php $color = $row['stok'] > 0 ? '#8BC34A' : '#F44336' @endphp
+                                        <p style="color: {{ $color }};">{{ $tersedia }}</p>
                                         <p class="text-muted kategori text-hide">{{ $row['kategori']->nama }}</p>
                                         <p class="text-muted harga text-hide">Rp. {{ $row['harga'] }}</p>
                                     </a>

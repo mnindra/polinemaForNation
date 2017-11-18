@@ -125,7 +125,7 @@ class BukuController extends Controller
 
     if($request->has('file')) {
       // hapus file lama
-      $files = glob('ebook/' . $id . '*');
+      $files = glob('ebook/' . $id . '.*');
       foreach ($files as $file) {
         unlink($file);
       }
@@ -142,7 +142,7 @@ class BukuController extends Controller
 
     if($request->has('sampul')) {
       // hapus file lama
-      $files = glob('img/sampul/' . $id . '*');
+      $files = glob('img/sampul/' . $id . '.*');
       foreach ($files as $file) {
         unlink($file);
       }
@@ -169,8 +169,8 @@ class BukuController extends Controller
   public function destroy($id)
   {
     $buku = Buku::find($id);
-    unlink('ebook/' . $buku['file']);
-    unlink('img/sampul/' . $buku['sampul']);
+    @unlink('ebook/' . $buku['file']);
+    @unlink('img/sampul/' . $buku['sampul']);
 
     Buku::destroy($id);
     return redirect('/admin/buku');

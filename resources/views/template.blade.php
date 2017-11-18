@@ -79,7 +79,7 @@
 
         const options = {
             valueNames: ['judul', 'kategori', 'harga'],
-            page: 3,
+            page: 8,
             pagination: true
         };
         const booklist = new List('book-list', options);

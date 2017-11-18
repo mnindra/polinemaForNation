@@ -6,6 +6,9 @@
             <div class="section-heading text-center">
                 <h2>{{ $buku['judul'] }}</h2>
                 <p class="text-muted">{{ $buku['kategori']->nama }}</p>
+                @php $tersedia = $buku['stok'] > 0 ? 'tersedia' : 'tidak tersedia' @endphp
+                @php $color = $buku['stok'] > 0 ? '#8BC34A' : '#F44336' @endphp
+                <p style="color: {{ $color }};">{{ $tersedia }}</p>
                 <hr>
             </div>
             <div class="row">
