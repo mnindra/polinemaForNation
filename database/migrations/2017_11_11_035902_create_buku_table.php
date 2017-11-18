@@ -25,7 +25,7 @@ class CreateBukuTable extends Migration
           $table->integer('tahun_terbit');
           $table->string('file');
           $table->string('sampul');
-          $table->string('deskripsi');
+          $table->text('deskripsi');
           $table->integer('stok');
           $table->timestamps();
 

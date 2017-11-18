@@ -14,16 +14,19 @@
   <!--  Material Dashboard CSS    -->
   <link href="<?= asset('css/material-dashboard.css?v=1.2.0') ?>" rel="stylesheet" />
   <!--     Fonts and icons     -->
-  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-  <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+  <link href="{{ asset('/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  {{-- Summernote --}}
+  <link rel="stylesheet" href="{{ asset('vendor/summernote/summernote-bs4.css') }}">
+  <link rel="stylesheet" href="{{ asset('vendor/summernote/summernote.css') }}">
 
   {{-- Datatables --}}
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap4.min.css') }}">
 </head>
 
 <body>
 <div class="wrapper">
-  <div class="sidebar" data-color="purple" data-image="../assets/img/sidebar-1.jpg">
+  <div class="sidebar" data-color="purple" data-image="{{ asset('img/sidebar-1.jpg') }}">
     <!--
 Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
@@ -161,8 +164,12 @@ Tip 2: you can also add an image using data-image tag
 <script src="<?= asset('js/material-dashboard.js?v=1.2.0') ?>"></script>
 
 {{-- Datatables --}}
-<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+<script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('js/dataTables.bootstrap4.min.js') }}"></script>
+
+{{-- Summernote --}}
+<script src="{{ asset('vendor/summernote/summernote-bs4.min.js') }}"></script>
+<script src="{{ asset('vendor/summernote/summernote.js') }}"></script>
 
 <script type="text/javascript">
     $(document).ready(function() {
@@ -183,6 +190,10 @@ Tip 2: you can also add an image using data-image tag
                 "infoFiltered": "",
                 "zeroRecords": "Data tidak ditemukan"
             }
+        });
+
+        $('#deskripsi').summernote({
+            minHeight: 250
         });
     });
 </script>

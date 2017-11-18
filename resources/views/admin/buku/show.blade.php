@@ -69,7 +69,7 @@
                                 </tr>
                             </table>
                             <hr>
-                            <p>{{ $buku['deskripsi'] }}</p>
+                            <p>{!! $buku['deskripsi'] !!}</p>
                         </div>
                     </div>
 
