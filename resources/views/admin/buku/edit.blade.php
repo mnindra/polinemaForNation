@@ -170,8 +170,8 @@
                         <div class="row">
                             <div class="col-md-12 col-lg-12">
                                 {{-- Input Textarea deskripsi --}}
-                                <div class="form-group label-floating {{ $errors->has('deskripsi') ? ' has-error' : '' }}">
-                                    <label for="deskripsi" class="control-label">Deskripsi</label>
+                                <div class="form-group {{ $errors->has('deskripsi') ? ' has-error' : '' }}">
+                                    <label for="deskripsi">Deskripsi</label>
                                     <textarea id="deskripsi" class="form-control" name="deskripsi" required autofocus>{{ old('deskripsi', $buku['deskripsi']) }}</textarea>
                                     <span class="input-material"></span>
                                     @if ($errors->has('deskripsi'))

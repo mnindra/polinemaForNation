@@ -21,7 +21,7 @@
             <div class="row h-100">
                 <div class="col-lg-7 my-auto">
                     <div class="header-content mx-auto">
-                        <h1 class="mb-5">Deskripsi Disini</h1>
+                        <h1 class="mb-5">{{ $pengaturan['heading'] }}</h1>
                         <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Lihat Koleksi Buku</a>
                     </div>
                 </div>
@@ -137,7 +137,7 @@
     <section class="contact bg-primary" id="contact">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-lg-8">
+                <div class="col-md-8 col-lg-8" style="padding: 50px">
                     <h2>Pemesanan</h2>
                     <form action="{{ url('/pemesanan/create') }}" method="post">
                         {{ csrf_field() }}
@@ -206,6 +206,12 @@
                             </div>
                         </div>
                     </form>
+                </div>
+                <div class="col-md-4 col-lg-4" style="padding: 50px; border-left: solid 1px #e9e9e9">
+                    <h5>Aturan Pemesanan</h5>
+                    <p class="text-muted">{{ $pengaturan['aturan_pemesanan'] }}</p>
+                    <p class="text-left" style="font-size: 15px"><i class="fa fa-envelope"></i>&nbsp;{{ $pengaturan['email'] }}</p>
+                    <p class="text-left" style="font-size: 15px"><i class="fa fa-phone"></i>&nbsp;{{ $pengaturan['telp'] }}</p>
                 </div>
             </div>
         </div>

@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Buku;
 use App\Pengaturan;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class BerandaController extends Controller
+class PengaturanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,8 @@ class BerandaController extends Controller
      */
     public function index()
     {
-        $data['pengaturan'] = Pengaturan::find(1);
-        $data['buku'] = Buku::orderBy('created_at', 'desc')->take(5)->get();
-        return view('beranda.index', $data);
+      $data['pengaturan'] = Pengaturan::find(1);
+      return view('admin.pengaturan.index', $data);
     }
 
     /**
@@ -38,6 +37,7 @@ class BerandaController extends Controller
      */
     public function store(Request $request)
     {
+        //
     }
 
     /**
@@ -71,7 +71,15 @@ class BerandaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+          'heading' => 'required|string',
+          'email' => 'required|email',
+          'telp' => 'required|numeric',
+          'aturan_pemesanan' => 'required|string'
+        ]);
+
+        Pengaturan::find($id)->update($request->all());
+        return redirect('/admin/pengaturan');
     }
 
     /**

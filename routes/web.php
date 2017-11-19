@@ -35,6 +35,9 @@ Route::group(['middleware' => 'auth_petugas'], function () {
 
   // Pesan Route
   Route::resource('admin/pesan', 'Admin\PesanController');
+
+  // Setting Route
+  Route::resource('admin/pengaturan', 'Admin\PengaturanController');
 });
 
 Route::group(['middleware' => 'redirect_petugas'], function () {

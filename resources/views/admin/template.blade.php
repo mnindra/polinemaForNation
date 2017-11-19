@@ -73,6 +73,13 @@ Tip 2: you can also add an image using data-image tag
             <p>Petugas</p>
           </a>
         </li>
+
+        <li>
+          <a href="{{ url('/admin/pengaturan') }}">
+            <i class="material-icons">settings</i>
+            <p>Pengaturan</p>
+          </a>
+        </li>
       </ul>
     </div>
   </div>

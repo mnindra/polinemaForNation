@@ -32,7 +32,7 @@
                             <th>Jenis Kelamin</th>
                             <th>Username</th>
                             <th>Email</th>
-                            <th>Telp</th>
+                            <th>Telpon</th>
                             <th>Aksi</th>
                         </tr>
                         </thead>
