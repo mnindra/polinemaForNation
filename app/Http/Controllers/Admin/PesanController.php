@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Pesan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\View;
 
 class PesanController extends BaseController
 {
@@ -52,6 +53,9 @@ class PesanController extends BaseController
         Pesan::find($id)->update([
           'dibaca' => 1
         ]);
+
+        $pesan = Pesan::where('dibaca', 0)->orderBy('created_at', 'desc')->get();
+        View::share('pesan_belum_terbaca', $pesan);
 
         $data['pesan'] = Pesan::find($id);
         return view('admin.pesan.show', $data);
