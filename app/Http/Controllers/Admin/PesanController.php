@@ -6,7 +6,7 @@ use App\Pesan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class PesanController extends Controller
+class PesanController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -49,6 +49,10 @@ class PesanController extends Controller
      */
     public function show($id)
     {
+        Pesan::find($id)->update([
+          'dibaca' => 1
+        ]);
+
         $data['pesan'] = Pesan::find($id);
         return view('admin.pesan.show', $data);
     }

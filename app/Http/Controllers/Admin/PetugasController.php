@@ -7,7 +7,7 @@ use App\Petugas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class PetugasController extends Controller
+class PetugasController extends BaseController
 {
     /**
      * Display a listing of the resource.

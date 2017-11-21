@@ -99,27 +99,31 @@ Tip 2: you can also add an image using data-image tag
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="material-icons">notifications</i>
-                <span class="notification">5</span>
+                <i class="material-icons">email</i>
+                @if($pesan_belum_terbaca->count() > 0)
+                  <span class="notification">{{ $pesan_belum_terbaca->count() }}</span>
+                @endif
                 <p class="hidden-lg hidden-md">Notifications</p>
               </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="#">Mike John responded to your email</a>
-                </li>
-                <li>
-                  <a href="#">You have 5 new tasks</a>
-                </li>
-                <li>
-                  <a href="#">You're now friend with Andrew</a>
-                </li>
-                <li>
-                  <a href="#">Another Notification</a>
-                </li>
-                <li>
-                  <a href="#">Another One</a>
-                </li>
-              </ul>
+
+              @if($pesan_belum_terbaca->count() > 0)
+                <ul class="dropdown-menu">
+                  @foreach($pesan_belum_terbaca as $key => $pesan)
+                    @if($key < 5)
+                    <li>
+                      <a href="{{ url('/admin/pesan/' . $pesan['id_pesan']) }}">
+                        <b>{{ $pesan['email'] }}</b><br>
+                        {{ \Illuminate\Support\Str::words($pesan['isi'], 5, '...') }}<br>
+                        <b>{{ $pesan['created_at'] }}</b>
+                      </a>
+                    </li>
+                    @endif
+                  @endforeach
+                  <li>
+                    <a href="{{ url('/admin/pesan') }}">Baca Semua Pesan</a>
+                  </li>
+                </ul>
+              @endif
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">

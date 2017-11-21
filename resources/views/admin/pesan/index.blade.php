@@ -32,17 +32,21 @@
                             <th>Nama</th>
                             <th>Email</th>
                             <th>Telp</th>
+                            <th>Status</th>
                             <th>Aksi</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($pesan as $index => $row)
+                            @php $status = $row['dibaca'] ? 'sudah dibaca' : 'belum dibaca' @endphp
+                            @php $color = $row['dibaca'] ? '#424242' : '#709941' @endphp
                             <tr>
                                 <td>{{ $index + 1 }}</td>
                                 <td>{{ $row['created_at'] }}</td>
                                 <td>{{ $row['nama'] }}</td>
                                 <td>{{ $row['email'] }}</td>
                                 <td>{{ $row['telp'] }}</td>
+                                <td><span style="color: {{ $color }}"><b>{{ $status }}</b></span></td>
                                 <td>
                                     <form id="{{ 'form' . $row['id_pesan'] }}" action="{{ url('/admin/pesan/' . $row['id_pesan']) }}" method="post">
                                         {{ csrf_field() }}

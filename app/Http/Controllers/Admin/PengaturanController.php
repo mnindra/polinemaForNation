@@ -6,7 +6,7 @@ use App\Pengaturan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class PengaturanController extends Controller
+class PengaturanController extends BaseController
 {
     /**
      * Display a listing of the resource.

@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Kategori;
 use Illuminate\Http\Request;
 
-class KategoriController extends Controller
+class KategoriController extends BaseController
 {
     /**
      * Display a listing of the resource.
