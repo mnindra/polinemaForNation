@@ -5,6 +5,21 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
+
+            @if(Session::has('error_message'))
+                <div class="alert alert-danger alert-dismissable">
+                    <button type="button" aria-hidden="true" class="close" data-dismiss="alert" style="position: absolute; right: 10px; top: 50%; margin-top: -13px; z-index: 1033;">×</button>
+                    <span>{{ session('error_message') }}</span>
+                </div>
+            @endif
+
+            @if(Session::has('success_message'))
+                <div class="alert alert-success alert-dismissable">
+                    <button type="button" aria-hidden="true" class="close" data-dismiss="alert" style="position: absolute; right: 10px; top: 50%; margin-top: -13px; z-index: 1033;">×</button>
+                    <span>{{ session('success_message') }}</span>
+                </div>
+            @endif
+
             <h4>Pengaturan</h4>
             <div class="card">
                 <div class="card-content">

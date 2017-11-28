@@ -16,6 +16,13 @@ class PemesananController extends Controller
      */
     public function store(Request $request)
     {
+      $this->validate($request, [
+        'nama' => 'required|string',
+        'email' => 'required|email',
+        'telp' => 'required|numeric',
+        'isi' => 'required|string'
+      ]);
+
       Pesan::create($request->all());
     }
 }

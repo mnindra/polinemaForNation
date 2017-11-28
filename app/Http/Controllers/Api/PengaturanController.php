@@ -16,6 +16,6 @@ class PengaturanController extends Controller
     public function index()
     {
         $pengaturan = Pengaturan::find(1);
-        echo json_encode($pengaturan);
+        return response()->json($pengaturan);
     }
 }

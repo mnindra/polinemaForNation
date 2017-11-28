@@ -16,7 +16,7 @@ class BukuController extends Controller
     public function index()
     {
         $buku = Buku::orderBy('created_at', 'desc')->with('kategori')->get();
-        echo json_encode($buku);
+        return response()->json($buku);
     }
 
     /**
@@ -28,6 +28,6 @@ class BukuController extends Controller
     public function show($id)
     {
         $buku = Buku::with('kategori')->where('id_buku', $id)->get();
-        echo json_encode($buku);
+        return response()->json($buku);
     }
 }

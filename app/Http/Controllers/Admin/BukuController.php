@@ -70,6 +70,8 @@ class BukuController extends BaseController
       'file' => $file,
       'sampul' => $sampul
     ]);
+
+    $request->session()->flash('success_message', 'Data berhasil ditambahkan');
     return redirect('/admin/buku');
   }
 
@@ -157,22 +159,25 @@ class BukuController extends BaseController
       ]);
     }
 
+    $request->session()->flash('success_message', 'Data berhasil diubah');
     return redirect('/admin/buku');
   }
 
   /**
    * Remove the specified resource from storage.
    *
-   * @param  int  $id
+   * @param  int $id
+   * @param Request $request
    * @return \Illuminate\Http\Response
    */
-  public function destroy($id)
+  public function destroy($id, Request $request)
   {
     $buku = Buku::find($id);
     @unlink('ebook/' . $buku['file']);
     @unlink('img/sampul/' . $buku['sampul']);
 
     Buku::destroy($id);
+    $request->session()->flash('success_message', 'Data berhasil dihapus');
     return redirect('/admin/buku');
   }
 }

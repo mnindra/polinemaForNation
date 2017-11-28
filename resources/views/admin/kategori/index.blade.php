@@ -5,6 +5,21 @@
 @section('content')
     <div class="row">
         <div class="col-md-7">
+
+            @if(Session::has('error_message'))
+                <div class="alert alert-danger alert-dismissable">
+                    <button type="button" aria-hidden="true" class="close" data-dismiss="alert" style="position: absolute; right: 10px; top: 50%; margin-top: -13px; z-index: 1033;">×</button>
+                    <span>{{ session('error_message') }}</span>
+                </div>
+            @endif
+
+            @if(Session::has('success_message'))
+                <div class="alert alert-success alert-dismissable">
+                    <button type="button" aria-hidden="true" class="close" data-dismiss="alert" style="position: absolute; right: 10px; top: 50%; margin-top: -13px; z-index: 1033;">×</button>
+                    <span>{{ session('success_message') }}</span>
+                </div>
+            @endif
+
             <h4>Data Kategori</h4>
             <div class="card">
                 <div class="card-content table-responsive">
@@ -29,7 +44,7 @@
 
                                     <div class="btn-group" role="group" aria-label="Basic example">
                                         <a href="{{ url('/admin/kategori/' . $row['id_kategori'] . '/edit') }}" class="btn btn-sm btn-warning">Ubah</a>
-                                        <button type="submit" class="btn btn-sm btn-danger" form="{{ 'form' . $row['id_kategori'] }}">Hapus</button>
+                                        <button type="submit" class="btn btn-sm btn-danger" form="{{ 'form' . $row['id_kategori'] }}" onclick="return confirm('Hapus Data ?')">Hapus</button>
                                     </div>
                                 </td>
                             </tr>
