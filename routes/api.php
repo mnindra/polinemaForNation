@@ -19,5 +19,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/buku', 'Api\BukuController@index');
 Route::get('/buku/{id}', 'Api\BukuController@show');
+Route::get('/kategori', 'Api\KategoriController@index');
 Route::get('/pengaturan', 'Api\PengaturanController@index');
 Route::post('/pemesanan', 'Api\PemesananController@store');
