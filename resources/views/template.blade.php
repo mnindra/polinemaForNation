@@ -13,6 +13,9 @@
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
+    {{-- Icon --}}
+    <link rel="stylesheet" href="{{ asset('img/logo.png') }}">
+
     <!-- Custom fonts for this template -->
     <link rel="stylesheet" href="{{ asset('vendor/font-awesome/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/simple-line-icons/css/simple-line-icons.css') }}">
